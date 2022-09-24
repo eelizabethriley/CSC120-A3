@@ -20,31 +20,24 @@ class Conversation {
     for (int i = 0; i <= rounds; i++) {
       //  Take in the user response for each round, checking for mirror words.
       String userInput = input.nextLine();
-      String [] arrOfInput = userInput.split(" ", 1);
-      for (int k = 0; i < arrOfInput.length; i++) {
+      String [] arrOfInput = userInput.split(" ", 999);
+      for (int k = 0; k < arrOfInput.length; k++) {
         if (arrOfInput[k].equals("you")) {
-          arrOfInput[k].replace("you", "I");
+          // arrOfInput[k].replace("you", "I");
+          arrOfInput[k] = "I";
         }
         if (arrOfInput[k].equals("I")) {
           arrOfInput[k].replace("I", "you");
         }
+        else {
+          System.out.println("Okay.");
+        }
+        System.out.println(Arrays.toString(arrOfInput));
       }
-      System.out.println(arrOfInput);
 
-      // if (i.contains("I")) {
-      //   userInput = "you";
-      //   System.out.println("new part" + " rest of line"+"?");
-      // } else if (userInput.contains("you")) {
-      //   // turn the token of the input that = you into I
-      //   userInput = "I";
-      //   System.out.println("I + rest of the line"+"?");
-      // } else {
-      //   System.out.println("Okay.");
-      // }
 
     }
     input.close();
-    System.out.println(Arrays.toString(arrOfInput));
     // Take in the input given by the user in response
     // If the input contains mirror words, convert the words to their mirror and return the altered string.
     // Otherwise, return a canned response.
