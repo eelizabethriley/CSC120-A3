@@ -17,9 +17,17 @@ class Conversation {
     System.out.println("Hi there! What's on your mind?");
     for (int i = 0; i < rounds+1; i++) {
       String userInput = chatResponse.nextLine();
-      
-    }
+      if (userInput.contains("I")) {
+        userInput = "you";
+      } else if (userInput.contains("you")) {
+        // turn the token of the input that = you into I
+        userInput = "I";
+      } else {
+        System.out.println("Okay.");
+      }
 
+    }
+    System.out.println("Goodbye!");
 
     // Take in the input given by the user in response
     // If the input contains mirror words, convert the words to their mirror and return the altered string.
