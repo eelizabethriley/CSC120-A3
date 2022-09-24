@@ -10,32 +10,34 @@ class Conversation {
     System.out.println("How many rounds?");
     Integer rounds = input.nextInt();
 
-    // Create a new scanner to take in user response.
-    // Scanner chatResponse = new Scanner (System.in);
-
     // Start the conversation with a greeting and a question.
     System.out.println("Hi there! What's on your mind?");
     input.nextLine();
+
     // Continue the conversation for the number of rounds inputted.
     for (int i = 0; i <= rounds; i++) {
-      //  Take in the user response for each round, checking for mirror words.
+      //  Take in the user response for each round.
       String userInput = input.nextLine();
-      String [] arrOfInput = userInput.split(" ", 999);
+      // Split the response into an array of strings, seperating the words by spaces.
+      String [] arrOfInput = userInput.split(" ", 50);
       for (int k = 0; k < arrOfInput.length; k++) {
-        if (arrOfInput[k].equals("you")) {
+        if (arrOfInput[k].equals("you") || arrOfInput[k].equals("You")) {
           // arrOfInput[k].replace("you", "I");
           arrOfInput[k] = "I";
         }
         if (arrOfInput[k].equals("I")) {
-          arrOfInput[k].replace("I", "you");
+          // arrOfInput[k].replace("I", "you");
+          arrOfInput[k] = "I";
         }
         else {
           System.out.println("Okay.");
         }
-        System.out.println(Arrays.toString(arrOfInput));
       }
-
-
+      
+     String words = Arrays.toString(arrOfInput);
+      for (int w = 0; w < arrOfInput.length; w++) {
+        System.out.print(words);
+      }
     }
     input.close();
     // Take in the input given by the user in response
