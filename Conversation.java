@@ -13,17 +13,25 @@ class Conversation {
     // Start the conversation with a greeting and a question.
     System.out.println("Hi there! What's on your mind?");
     input.nextLine();
+    String response = "";
+    String cannedResponses[] = {"Okay.","Well then.", "Whatever you say!"};
+    String mirrorWords[] = {"you", "I", "me"};
+    String chatTranscript[] = {};
 
     // Continue the conversation for the number of rounds inputted.
     for (int i = 0; i <= rounds; i++) {
-      //  Take in the user response for each round.
+      // Print the chatbot response for this round.
+      System.out.println(response);
+      //  Take in the user response for this round.
       String userInput = input.nextLine();
       // Split the response into an array of strings, seperating the words by spaces.
       String [] arrOfInput = userInput.split(" ", 50);
+      // if (userInput.contains(mirrorWords));
       for (int k = 0; k < arrOfInput.length; k++) {
         if (arrOfInput[k].equals("you") || arrOfInput[k].equals("You")) {
           // arrOfInput[k].replace("you", "I");
           arrOfInput[k] = "I";
+          response = Arrays.toString(arrOfInput);
         }
         if (arrOfInput[k].equals("I")) {
           // arrOfInput[k].replace("I", "you");
@@ -39,10 +47,10 @@ class Conversation {
         System.out.print(words);
       }
     }
+    System.out.println("Goodbye!");
     input.close();
-    // Take in the input given by the user in response
-    // If the input contains mirror words, convert the words to their mirror and return the altered string.
-    // Otherwise, return a canned response.
+
+    // Print a transcript of the conversation.
 
   }
 }
