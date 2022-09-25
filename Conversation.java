@@ -19,8 +19,8 @@ class Conversation {
 
     // Initialize variables needed for the conversation.
     String response = "";
-    String cannedResponses[] = {"Okay.","Well then.", "Whatever you say!", "Mhm...", "Awesome!", "Suuuure"};
-    // String mirrorWords[] = {"I", "you", "me", "am", "are", "my", "your"};
+    String cannedResponses[] = {"Okay.","Well then.", "Whatever you say!", "Mhm...", "Awesome!", "Suuuure."};
+    String mirrorWords[] = {"I", "you", "me", "am", "are", "my", "your"};
 
     // Initiliaze an Array List "chatTranscript" to store a transcript of the conversation.
     ArrayList<String> chatTranscript = new ArrayList<String>();
@@ -40,33 +40,34 @@ class Conversation {
 
       // Split the response into an array of strings, seperating the words by spaces.
       String [] arrOfInput = userInput.split(" ", 50);
+      String [] responseMirr = userInput.split(" ", 50);
 
-      if (userInput.contains("you")) {
-        for (int k = 0; k < arrOfInput.length; k++) {
-          if (arrOfInput[k].equals("you") || arrOfInput[k].equals("You")) {
-            // arrOfInput[k].replace("you", "I");
-            arrOfInput[k] = "I";
-            response = Arrays.toString(arrOfInput);
+      for (int x = 0; x < arrOfInput.length; x++) {
+        String currentWord = arrOfInput[x];
+        for (int y = 0; y < mirrorWords.length; y++) {
+          if (currentWord.equals(mirrorWords[y])) {
+            responseMirr[x] = mirrorWords[y+1];
+          } else {
+            String canned = (cannedResponses[r]);
+            response = (canned);
+            chatTranscript.add(response);
           }
-          else if (arrOfInput[k].equals("I")) {
-            // arrOfInput[k].replace("I", "you");
-            arrOfInput[k] = "you";
-            response = Arrays.toString(arrOfInput);
-          }
+        }
       }
-  } else {
-      String canned = (cannedResponses[r]);
-      response = (canned);
-      chatTranscript.add(response);
-    }
+        
+    // else {
+    //   String canned = (cannedResponses[r]);
+    //   response = (canned);
+    //   chatTranscript.add(response);
+    // }
     System.out.println(response);
 }
 // Print a goodbye statement.
 System.out.println("Goodbye! :)" + "\n");
 chatTranscript.add("Goodbye! :)");
 
-// Print a transcript of the conversation.
-System.out.println("TRANSCRIPT:");
+// Print a transcript of the conversation by iterating through and printing each part of the array list.
+System.out.println("--- TRANSCRIPT:");
 for (int line = 0; line < chatTranscript.size(); line++) {
   System.out.print(chatTranscript.get(line) + "\n");
 
