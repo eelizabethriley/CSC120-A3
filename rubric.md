@@ -22,19 +22,19 @@ __YES___ 1 pt: Allocates static array of canned responses
 
 ### Level 2 (3 pts)
 
-_____ 1 pt: Uses a canned response when no mirror words detected
+___YES__ 1 pt: Uses a canned response when no mirror words detected
 
-_____ 1 pt: Detects the requested set of mirror words (at minimum)
+__PART___ 1 pt: Detects the requested set of mirror words (at minimum)
 
-_____ 1 pt: Replaces simple mirror words appropriately (unpunctuated, lowercase)
+___YES__ 1 pt: Replaces simple mirror words appropriately (unpunctuated, lowercase)
 
 ### Level 3 (3 pts)
 
-_____ 1 pt: Makes all appropriate mirror replacements
+__PART___ 1 pt: Makes all appropriate mirror replacements
 
 __YES___ 1 pt: Stores transcript of the conversation in an array
 
-_____ 1 pt: Prints transcript when terminating
+___YES__ 1 pt: Prints transcript when terminating
 
 ## Kudos:
 
@@ -58,7 +58,7 @@ _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       _____ Clear and consistent indentation of bracketed sections
 
-      _____ Adheres to Java conventions on naming & capitalization
+      __PART___ Adheres to Java conventions on naming & capitalization
 
       __YES___ Methods & variables all have clear and accurate names
 

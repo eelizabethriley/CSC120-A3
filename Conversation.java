@@ -20,7 +20,8 @@ class Conversation {
     // Initialize variables needed for the conversation.
     String response = "";
     String cannedResponses[] = {"Okay.","Well then.", "Whatever you say!", "Mhm...", "Awesome!", "Suuuure."};
-    String mirrorWords[] = {"I", "you", "me", "am", "are", "my", "your"};
+    // String mirrorWords[] = {"I", "you", "me", "am", "are", "my", "your"};
+    String mirrorWords = "I you me am are my your";
 
     // Initiliaze an Array List "chatTranscript" to store a transcript of the conversation.
     ArrayList<String> chatTranscript = new ArrayList<String>();
@@ -40,26 +41,22 @@ class Conversation {
 
       // Split the response into an array of strings, seperating the words by spaces.
       String [] arrOfInput = userInput.split(" ", 50);
-      String [] responseMirr = userInput.split(" ", 50);
-
-      for (int x = 0; x < arrOfInput.length; x++) {
-        String currentWord = arrOfInput[x];
-        for (int y = 0; y < mirrorWords.length; y++) {
-          if (currentWord.equals(mirrorWords[y])) {
-            responseMirr[x] = mirrorWords[y+1];
-          } else {
-            String canned = (cannedResponses[r]);
-            response = (canned);
-            chatTranscript.add(response);
+      String testInp = userInput.toUpperCase();
+      //Check if the user input contains any of the mirror words. Placeholder solutiom using or, concise alternative desired.
+      if (testInp.contains("YOU")|| testInp.contains(" I ") || testInp.contains("ME") || testInp.contains("AM") || testInp.contains("ARE") || testInp.contains("MY") || testInp.contains("YOUR")) {
+        // for loop
+        for (int k = 0; k < arrOfInput.length; k++) {
+          // Iterate through each word in the array, checking for each mirror word. Change to the mirror of the word if found.
+          String currentWord = arrOfInput[k].toUpperCase();
+          if (currentWord.equals("YOU")) {
+            response = "hey change this erin";
           }
         }
+      } else { // If the user input contains no mirror words, simply use a canned response.
+        String canned = (cannedResponses[r]);
+        response = (canned);
       }
-        
-    // else {
-    //   String canned = (cannedResponses[r]);
-    //   response = (canned);
-    //   chatTranscript.add(response);
-    // }
+      chatTranscript.add(response);
     System.out.println(response);
 }
 // Print a goodbye statement.
@@ -67,10 +64,9 @@ System.out.println("Goodbye! :)" + "\n");
 chatTranscript.add("Goodbye! :)");
 
 // Print a transcript of the conversation by iterating through and printing each part of the array list.
-System.out.println("--- TRANSCRIPT:");
+System.out.println("--- CHAT TRANSCRIPT:");
 for (int line = 0; line < chatTranscript.size(); line++) {
   System.out.print(chatTranscript.get(line) + "\n");
-
 }
 // Close the Scanner called "input".
 input.close();
