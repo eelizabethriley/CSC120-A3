@@ -24,13 +24,13 @@ __YES___ 1 pt: Allocates static array of canned responses
 
 ___YES__ 1 pt: Uses a canned response when no mirror words detected
 
-__PART___ 1 pt: Detects the requested set of mirror words (at minimum)
+__YES___ 1 pt: Detects the requested set of mirror words (at minimum)
 
 ___YES__ 1 pt: Replaces simple mirror words appropriately (unpunctuated, lowercase)
 
 ### Level 3 (3 pts)
 
-__PART___ 1 pt: Makes all appropriate mirror replacements
+__YES___ 1 pt: Makes all appropriate mirror replacements
 
 __YES___ 1 pt: Stores transcript of the conversation in an array
 
@@ -48,17 +48,17 @@ _____ (Kudos!) Handles you --> me/I dilemma
 
 ## General Items:
 
-_____ 4 pts: Programs compile without errors or warnings
+__YES___ 4 pts: Programs compile without errors or warnings
 
-_____ 2 pts: Executes fully & consistently without crashing (exception/freeze)
+__YES___ 2 pts: Executes fully & consistently without crashing (exception/freeze)
 
 _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       _____ Classes & class members all have Javadoc header comments
 
-      _____ Clear and consistent indentation of bracketed sections
+      ___YES__ Clear and consistent indentation of bracketed sections
 
-      __PART___ Adheres to Java conventions on naming & capitalization
+      __YES___ Adheres to Java conventions on naming & capitalization
 
       __YES___ Methods & variables all have clear and accurate names
 

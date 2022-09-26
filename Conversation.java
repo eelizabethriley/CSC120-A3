@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,8 +19,6 @@ class Conversation {
     // Initialize variables needed for the conversation.
     String response = "";
     String cannedResponses[] = {"Okay.","Well then.", "Whatever you say!", "Mhm...", "Awesome!", "Suuuure."};
-    // String mirrorWords[] = {"I", "you", "me", "am", "are", "my", "your"};
-    String mirrorWords = "I you me am are my your";
 
     // Initiliaze an Array List "chatTranscript" to store a transcript of the conversation.
     ArrayList<String> chatTranscript = new ArrayList<String>();
@@ -34,7 +31,7 @@ class Conversation {
     // Continue the conversation for the number of rounds inputted.
     for (int i = 0; i < rounds; i++) {
       //  Take in the user response for this round and add it to the transcript.
-      String userInput = input.nextLine();
+      String userInput = input.nextLine(); 
       chatTranscript.add(userInput);
       Random random = new Random();
       Integer r = random.nextInt(5);
@@ -49,8 +46,22 @@ class Conversation {
           // Iterate through each word in the array, checking for each mirror word. Change to the mirror of the word if found.
           String currentWord = arrOfInput[k].toUpperCase();
           if (currentWord.equals("YOU")) {
-            response = "hey change this erin";
+            arrOfInput[k] = "I";
+          } else if (currentWord.equals("I")) {
+            arrOfInput[k] = "you";
+          } else if (currentWord.equals("ME")) {
+            arrOfInput[k] = "you";
+          } else if (currentWord.equals("AM")) {
+            arrOfInput[k] = "are";
+          } else if (currentWord.equals("ARE")) {
+            arrOfInput[k] = "am";
+          } else if (currentWord.equals("MY")) {
+            arrOfInput[k] = "your";
+          } else if (currentWord.equals("YOUR")) {
+            arrOfInput[k] = "my";
           }
+          String mirror = String.join(" ", arrOfInput);
+          response = mirror + "?";
         }
       } else { // If the user input contains no mirror words, simply use a canned response.
         String canned = (cannedResponses[r]);
