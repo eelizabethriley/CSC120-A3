@@ -39,8 +39,8 @@ class Conversation {
       // Split the response into an array of strings, seperating the words by spaces.
       String [] arrOfInput = userInput.split(" ", 50);
       String testInp = userInput.toUpperCase();
-      //Check if the user input contains any of the mirror words. Placeholder solutiom using or, concise alternative desired.
-      if (testInp.contains("YOU")|| testInp.contains("I") || testInp.contains("ME") || testInp.contains("AM") || testInp.contains("ARE") || testInp.contains("MY") || testInp.contains("YOUR")) {
+      //Check if the user input contains any of the mirror words.
+      if (testInp.contains("YOU")|| testInp.contains(" I ") || testInp.contains("I ") || testInp.contains("ME") || testInp.contains("AM") || testInp.contains("ARE") || testInp.contains("MY") || testInp.contains("YOUR")) {
         // for loop
         for (int k = 0; k < arrOfInput.length; k++) {
           // Iterate through each word in the array, checking for each mirror word. Change to the mirror of the word if found.
